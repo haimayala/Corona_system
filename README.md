@@ -23,4 +23,6 @@ To add a vaccination to spacific client: click on add vaccinatin:   ![‏‏צי
 and create a vaccination:  ![‏‏צילום מסך (595)](https://github.com/haimayala/Corona_system/assets/117019217/2179b12b-39ef-407f-bf6a-c196ded38725)
 The system does not allow adding more than 4 vaccinations per client:![‏‏צילום מסך (596)](https://github.com/haimayala/Corona_system/assets/117019217/0234723e-ef4e-4ed4-90bb-96da8ebb70ab)
 ![‏‏צילום מסך (597)](https://github.com/haimayala/Corona_system/assets/117019217/d1586c58-4e80-49ab-8c96-a284fd5b5d8e)
+View all the vaccination of all the clients: click on view vaccination information: ![‏‏צילום מסך (598)](https://github.com/haimayala/Corona_system/assets/117019217/9a39dfee-8835-4d84-b069-50ac284a48c8)
 
+![‏‏צילום מסך (599)](https://github.com/haimayala/Corona_system/assets/117019217/b2b43d08-d1c1-4887-b95f-1ed58e55cb12)
