@@ -1,0 +1,56 @@
+﻿@model Corona_system.Models.vaccination
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>vaccination</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="VaccinationDate" class="control-label"></label>
+                <input asp-for="VaccinationDate" class="form-control" type="date" />
+                <span asp-validation-for="VaccinationDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VaccineManufacturer" class="control-label"></label>
+                <input asp-for="VaccineManufacturer" class="form-control" />
+                <span asp-validation-for="VaccineManufacturer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="hidden" asp-for="ClientId" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        function validateForm() {
+            var form = document.forms[0];
+            var isValid = form.checkValidity();
+            if (!isValid) {
+                var elements = form.querySelectorAll(':invalid');
+                elements.forEach(function (element) {
+                    element.classList.add('is-invalid');
+                });
+            }
+            return isValid;
+        }
+    </script>
+}

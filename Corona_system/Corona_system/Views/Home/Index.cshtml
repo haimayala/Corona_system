@@ -2,7 +2,27 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+<style>
+    .welcome-section {
+        background-color: turquoise;
+        padding: 50px;
+        text-align: center;
+    }
+
+    .picture-section {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+        .picture-section img {
+            width: 200px;
+            height: auto;
+            margin: 10px;
+        }
+</style>
+
+<div class="welcome-section">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <a class="btn btn-primary" style="background-color: white; color: black;" href="@Url.Action("Index", "clients")">View Clients</a>
+    <a class="btn btn-primary" style="background-color: white; color: black;" href="@Url.Action("Index", "vaccinations")">View vaccination information:</a>
 </div>

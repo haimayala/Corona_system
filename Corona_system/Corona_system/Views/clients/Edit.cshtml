@@ -1,0 +1,96 @@
+﻿@model Corona_system.Models.client
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>client</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="first_name" class="control-label"></label>
+                <input asp-for="first_name" class="form-control" />
+                <span asp-validation-for="first_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="last_name" class="control-label"></label>
+                <input asp-for="last_name" class="form-control" />
+                <span asp-validation-for="last_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dateOfBirth" class="control-label"></label>
+                <input asp-for="dateOfBirth" class="form-control" type="date"/>
+                <span asp-validation-for="dateOfBirth" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="imageUrl" class="control-label"></label>
+                <input asp-for="imageUrl" class="form-control" />
+                <span asp-validation-for="imageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="city_name" class="control-label"></label>
+                <input asp-for="city_name" class="form-control" />
+                <span asp-validation-for="city_name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="street" class="control-label"></label>
+                <input asp-for="street" class="form-control" />
+                <span asp-validation-for="street" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="numStreet" class="control-label"></label>
+                <input asp-for="numStreet" class="form-control" />
+                <span asp-validation-for="numStreet" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="phone" class="control-label"></label>
+                <input asp-for="phone" class="form-control" />
+                <span asp-validation-for="phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Mobile_Phone" class="control-label"></label>
+                <input asp-for="Mobile_Phone" class="form-control" />
+                <span asp-validation-for="Mobile_Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="reciving" class="control-label"></label>
+                <input asp-for="reciving" class="form-control" type="date" id="recivingDate" onchange="setMinRecoveryDate()" />
+                <span asp-validation-for="reciving" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="recovery" class="control-label"></label>
+                <input asp-for="recovery" class="form-control" type="date" id="recoveryDate" />
+                <span asp-validation-for="recovery" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script>
+        function setMinRecoveryDate() {
+            var recivingDateInput = document.getElementById("recivingDate");
+            var recoveryDateInput = document.getElementById("recoveryDate");
+
+            // Parse the selected date of the reciving date input
+            var recivingDate = new Date(recivingDateInput.value);
+
+            // Set the minimum date for the recovery date input
+            recoveryDateInput.min = recivingDate.toISOString().split('T')[0];
+        }
+    </script>
+}

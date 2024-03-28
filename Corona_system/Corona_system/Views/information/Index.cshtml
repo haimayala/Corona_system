@@ -1,0 +1,55 @@
+﻿@model Corona_system.ViewModels.InformationViewModel
+
+@{
+    ViewData["Title"] = "Client Information";
+}
+
+<h1>Client Information</h1>
+
+<div>
+    <h3>Client Details:</h3>
+    <dl class="row">
+        <dt class="col-sm-2">ID:</dt>
+        <dd class="col-sm-10">@Model.Client.Id</dd>
+
+        <dt class="col-sm-2">First Name:</dt>
+        <dd class="col-sm-10">@Model.Client.first_name</dd>
+
+        <dt class="col-sm-2">Last Name:</dt>
+        <dd class="col-sm-10">@Model.Client.last_name</dd>
+
+        <dt class="col-sm-2">Date of patient diagnosis:</dt>
+        <dd class="col-sm-10">@Model.Client.reciving</dd>
+
+        <dt class="col-sm-2">Date of recovery:</dt>
+        <dd class="col-sm-10">@Model.Client.recovery</dd>
+
+
+    </dl>
+</div>
+
+<div>
+    <h3>Vaccinations:</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Vaccination Date</th>
+                <th>Vaccine Manufacturer</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vaccination in Model.Vaccinations)
+            {
+                <tr>
+                    <td>@vaccination.VaccinationDate.ToShortDateString()</td>
+                    <td>@vaccination.VaccineManufacturer</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <a asp-controller="clients" asp-action="Index">Back to List</a>
+
+</div>
